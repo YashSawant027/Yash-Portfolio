@@ -17,14 +17,14 @@ function Footer() {
                   <h1 className='text-[30px] font-bold'>Social</h1>
                   <div className='flex gap-5 mt-4'>
                     
-                      return(
+                      
                         <p className='text-[25px] hover:translate-y-[-0.5rem] duration-500 cursor-pointer'>
                           <a href="https://www.linkedin.com/in/YashSawant027/"><FontAwesomeIcon icon={faLinkedin}/></a>
                         </p>
                         <p className='text-[25px] hover:translate-y-[-0.5rem] duration-500 cursor-pointer'>
                           <a href="https://github.com/YashSawant027"><FontAwesomeIcon icon={faGithub}/></a>
                         </p>
-                      )
+                      
                     
                   </div>
                 </div>
