@@ -11,7 +11,7 @@ function Footer() {
             <div className='grid grid-rows-1 md:grid-cols-[70%_30%] py-5 pt-[5rem] gap:0 md:gap-[9rem] md:px-0 px-3'>
                 <div>
                   <h1 className='text-[30px] font-bold'>Yash Sawant</h1>
-                <p className='mt-4 md:pr-[15rem]'>A Frontend focused Web Developer building the Frontend of Websites and Web Applications that leads to the success of the overall product</p>
+                <p className='mt-4 md:pr-[15rem]'>Software Developer experienced in building AI-enabled web applications using React, FastAPI, and NLP workflows, delivering data-driven and user-centric solutions.</p>
                 </div>
                 <div className='mt-10'>
                   <h1 className='text-[30px] font-bold'>Social</h1>

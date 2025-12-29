@@ -37,7 +37,7 @@ function App() {
             <span className="md:text-[4.5rem] text-[3.5rem]">Yash Sawant</span>
           </h1>
           <p className="md:text-[1.5rem] text-[1.25rem] mt-7 md:px-3 xl:px-0">
-            A Result-Oriented Web Developer building and managing Websites and Web Applications that lead to product success.
+            Crafting responsive web experiences with React and scalable backend APIs. Focused on clean code, intuitive design, and user-centric solutions.
           </p>
           <a href="https://drive.google.com/file/d/1ONQqjwT0zOxg5TSPaTbDOMs-0j5T-zHx/view?usp=drive_link">
             <button
