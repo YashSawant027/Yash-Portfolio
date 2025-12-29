@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 function Contact() {
   return (
@@ -15,6 +15,7 @@ function Contact() {
         </div>
 
         <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
+          {/* Email Card */}
           <div className='bg-white p-10 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 text-center group border border-gray-100'>
             <div className='w-16 h-16 bg-yellow-50 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-yellow-400 transition-colors duration-300'>
               <svg
@@ -42,6 +43,7 @@ function Contact() {
             </a>
           </div>
 
+          {/* LinkedIn Card */}
           <div className='bg-white p-10 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 text-center group border border-gray-100'>
             <div className='w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-[#0077b5] transition-colors duration-300'>
               <svg
@@ -67,7 +69,7 @@ function Contact() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default Contact
+export default Contact;

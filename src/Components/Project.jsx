@@ -3,6 +3,7 @@ import energy from './ProjectAssets/EnergyTracker.png'
 import ttt from './ProjectAssets/ttt.png'
 import Queryla from './ProjectAssets/Queryla.png'
 import medibot from './ProjectAssets/medibot.png'
+import energy from './ProjectAssets/energy.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
@@ -84,7 +85,7 @@ function Project() {
         <div className='md:text-start md:pr-[10rem] '>
           <h1 className='text-[30px] font-bold mb-5'>Tic Tac Toe</h1>
           <p className='text-[20px] mb-9'>
-            Energy Tracker is a web app that estimates household electricity usage based on user input and suggests tips if consumption exceeds expected levels. It helps promote smarter, energy-efficient habits.
+            Tic Tac Toe is a classic two-player game built with React, featuring clean UI, responsive design, and simple game logic.
           </p>
           <a href="https://github.com/YashSawant027/tic-tac-toe">
             <FontAwesomeIcon icon={faGithub} className='text-[35px] cursor-pointer ml-5 hover:translate-y-[-0.5rem] duration-500'/>
