@@ -3,7 +3,6 @@ import energy from './ProjectAssets/EnergyTracker.png'
 import ttt from './ProjectAssets/ttt.png'
 import Queryla from './ProjectAssets/Queryla.png'
 import medibot from './ProjectAssets/medibot.png'
-import energy from './ProjectAssets/energy.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
