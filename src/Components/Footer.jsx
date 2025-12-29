@@ -4,12 +4,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 
 function Footer() {
-  let iconss = [
-    {name : <FontAwesomeIcon icon={faLinkedin}/>},
-    {name : <FontAwesomeIcon icon={faGithub}/>},
-    {name : <FontAwesomeIcon icon={faTwitter}/>},
-    {name : <FontAwesomeIcon icon={faInstagram}/>},
-  ]
 
   return (
     <div className='bg-[#000000] text-[#FFFFFF] w-[100%] md:h-[49vh] h-auto overflow-y-hidden px-4'>
@@ -22,11 +16,16 @@ function Footer() {
                 <div className='mt-10'>
                   <h1 className='text-[30px] font-bold'>Social</h1>
                   <div className='flex gap-5 mt-4'>
-                    {iconss.map((v,i)=>{
+                    
                       return(
-                        <p className='text-[25px] hover:translate-y-[-0.5rem] duration-500 cursor-pointer'>{v.name}</p>
+                        <p className='text-[25px] hover:translate-y-[-0.5rem] duration-500 cursor-pointer'>
+                          <a href="https://www.linkedin.com/in/YashSawant027/"><FontAwesomeIcon icon={faLinkedin}/></a>
+                        </p>
+                        <p className='text-[25px] hover:translate-y-[-0.5rem] duration-500 cursor-pointer'>
+                          <a href="https://github.com/YashSawant027"><FontAwesomeIcon icon={faGithub}/></a>
+                        </p>
                       )
-                    })}
+                    
                   </div>
                 </div>
             </div>
