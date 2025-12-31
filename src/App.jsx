@@ -39,7 +39,7 @@ function App() {
           <p className="md:text-[1.5rem] text-[1.25rem] mt-7 md:px-3 xl:px-0">
             Crafting responsive web experiences with React and scalable backend APIs. Focused on clean code, intuitive design, and user-centric solutions.
           </p>
-          <a href="https://drive.google.com/file/d/1ONQqjwT0zOxg5TSPaTbDOMs-0j5T-zHx/view?usp=drive_link">
+          <a href="https://drive.google.com/file/d/1bUg7hkrn7xlgkS18iwLutvy0XWolR6st/view?usp=drive_link">
             <button
             className="uppercase py-4 px-14 bg-yellow-400 mt-9 rounded-[10px] text-[1.5rem] font-bold text-white hover:translate-y-[-0.5rem] duration-500"
           >
