@@ -1,55 +1,108 @@
-import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import yash from './New folder/yash2.png'
-import React, { useState } from 'react'
-import { Link } from 'react-scroll'
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Link } from 'react-scroll';
+import { Menu, X } from 'lucide-react';
+import yash from './New folder/yash2.png';
 
 function Nav() {
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false);
 
-  const NavLinks = [
+  const navLinks = [
     { name: 'Home', to: 'home' },
     { name: 'About', to: 'about' },
     { name: 'Projects', to: 'projects' },
     { name: 'Contact', to: 'contact' },
-  ]
+  ];
 
   return (
-    <div className='w-full mt-0 text-[#393E46] py-4 px-7 rounded-[15px] bg-white fixed left-0 top-0 z-50 shadow-md'>
-      <div className='md:flex justify-between items-center'>
-        {/* Logo */}
-        <div className='flex gap-2 items-center ps-5'>
-          <img src={yash} alt="" className='cursor-pointer w-[55px] h-[50px] rounded-full border border-yellow-500' />
-          <h1 className='text-[1.8rem] font-bold py-2 ps-2 cursor-pointer'>YS</h1>
-        </div>
+    <nav className="fixed top-6 left-0 right-0 z-[100] flex justify-center px-6 pointer-events-none">
+      {/* --- Main Floating Pill Container --- */}
+      <motion.div 
+        initial={{ y: -100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        className="w-full max-w-4xl bg-white/90 backdrop-blur-xl border border-gray-100 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.1)] rounded-full px-5 py-3 flex items-center justify-between pointer-events-auto"
+      >
+        {/* Logo Section */}
+        <Link to="home" smooth={true} className="flex items-center gap-3 cursor-pointer group">
+          <img 
+            src={yash} 
+            alt="Yash" 
+            className="w-9 h-9 rounded-full border border-yellow-400 object-cover" 
+          />
+          <h1 className="text-xl font-bold tracking-tight text-slate-900 uppercase">
+            YS<span className="text-yellow-500">.</span>
+          </h1>
+        </Link>
 
-        {/* Hamburger */}
-        <div className='absolute right-[20px] top-[35px] md:hidden cursor-pointer' onClick={() => setOpen(!open)}>
-          <FontAwesomeIcon icon={open ? faXmark : faBars} />
-        </div>
-
-        {/* Nav Links */}
-        <ul className={`md:flex gap-[4rem] duration-300 md:static absolute bg-white md:w-auto w-full md:pr-[100px] px-6 left-0 text-end md:py-0 py-2 z-40 ${open ? 'top-[95px] opacity-100' : 'hidden'} md:opacity-100 md:top-0`}>
-          {NavLinks.map((v, i) => (
-            <li key={i} className='my-3 md:py-0 py-3 md:px-0 px-3 text-[1.2rem]'>
+        {/* Desktop Navigation */}
+        <ul className="hidden md:flex items-center gap-1">
+          {navLinks.map((link, i) => (
+            <li key={i}>
               <Link
-                to={v.to}
+                to={link.to}
                 smooth={true}
-                duration={500}
-                offset={-120}
                 spy={true}
-                onClick={() => setOpen(false)}
-                activeClass="border-b-[3px] border-yellow-400 text-yellow-400"
-                className="cursor-pointer pb-1 hover:text-yellow-400 duration-200"
+                offset={-150}
+                activeClass="bg-yellow-400 !text-white shadow-md shadow-yellow-100"
+                className="px-5 py-2 rounded-full text-[14px] font-semibold text-slate-500 hover:text-slate-900 hover:bg-slate-50 transition-all duration-300 cursor-pointer"
               >
-                {v.name}
+                {link.name}
               </Link>
             </li>
           ))}
         </ul>
-      </div>
-    </div>
-  )
+
+        {/* Desktop Action Button */}
+        <div className="hidden md:block">
+           <Link to="contact" smooth={true} className="px-6 py-2.5 bg-slate-900 text-white text-[12px] font-bold uppercase tracking-wider rounded-full hover:bg-yellow-400 hover:text-slate-900 transition-all duration-300 cursor-pointer">
+              Let's Talk
+           </Link>
+        </div>
+
+        {/* Mobile Menu Toggle */}
+        <button 
+          className="md:hidden p-2 text-slate-600 hover:text-black transition-colors"
+          onClick={() => setOpen(!open)}
+        >
+          {open ? <X size={22} /> : <Menu size={22} />}
+        </button>
+      </motion.div>
+
+      {/* --- Mobile Menu Overlay --- */}
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ opacity: 0, y: 10, scale: 0.98 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 10, scale: 0.98 }}
+            className="absolute top-[80px] left-6 right-6 bg-white border border-gray-100 rounded-[2.5rem] p-10 shadow-2xl md:hidden pointer-events-auto"
+          >
+            <ul className="flex flex-col gap-6 text-center">
+              {navLinks.map((link, i) => (
+                <motion.li 
+                  key={i}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: i * 0.05 }}
+                >
+                  <Link
+                    to={link.to}
+                    smooth={true}
+                    duration={500}
+                    onClick={() => setOpen(false)}
+                    /* FIXED MOBILE STYLING: font-bold instead of font-black */
+                    className="text-2xl font-bold text-slate-900 tracking-tight block py-2 hover:text-yellow-500 transition-colors active:scale-95 duration-200"
+                  >
+                    {link.name}
+                  </Link>
+                </motion.li>
+              ))}
+            </ul>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </nav>
+  );
 }
 
-export default Nav
+export default Nav;

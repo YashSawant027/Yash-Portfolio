@@ -1,98 +1,142 @@
 import React from 'react';
-import energy from './ProjectAssets/EnergyTracker.png'
-import ttt from './ProjectAssets/ttt.png'
-import Queryla from './ProjectAssets/Queryla.png'
-import medibot from './ProjectAssets/medibot.png'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { motion } from 'framer-motion';
+import { ExternalLink, Github, Code2, Sparkles, Activity, Play } from 'lucide-react';
+
+// Assets
+import energy from './ProjectAssets/EnergyTracker.png';
+import ttt from './ProjectAssets/ttt.png';
+import Queryla from './ProjectAssets/Queryla.png';
+import medibot from './ProjectAssets/medibot.png';
+
+const PROJECT_DATA = [
+  {
+    title: "Queryla",
+    desc: "A full-stack NLP-to-SQL engine that translates natural language into optimized queries across MySQL, MongoDB, and PostgreSQL with dynamic data visualizations.",
+    img: Queryla,
+    live: "https://yashsawant027.github.io/Queryla2.0/",
+    github: "https://github.com/YashSawant027/Queryla2.0",
+    tags: ["React", "FastAPI", "LLM", "SQL/NoSQL"],
+    icon: <Sparkles className="text-yellow-500" />
+  },
+  {
+    title: "Doctor Bot",
+    desc: "Multi-language AI medical assistant using Llama models. Supports transliterated text and provides safe medical precautions and professional health advice.",
+    img: medibot,
+    live: "https://medi-bot-7pwo.vercel.app/",
+    github: "https://github.com/YashSawant027/MediBot",
+    tags: ["LangChain", "Groq", "Python", "NLP"],
+    icon: <Activity className="text-red-500" />
+  },
+  {
+    title: "Energy Tracker",
+    desc: "Household electricity estimator that analyzes consumption habits and provides AI-driven suggestions for energy efficiency and cost reduction.",
+    img: energy,
+    live: "https://yashsawant027.github.io/Energy-Tracker/",
+    github: "https://github.com/YashSawant027/Energy-Tracker",
+    tags: ["JavaScript", "CSS3", "Analysis"],
+    icon: <Code2 className="text-blue-500" />
+  },
+  {
+    title: "Tic Tac Toe",
+    desc: "A refined take on the classic two-player game. Focuses on clean UI state management and responsive design principles.",
+    img: ttt,
+    live: "#",
+    github: "https://github.com/YashSawant027/tic-tac-toe",
+    tags: ["React", "State Logic"],
+    icon: <Play className="text-emerald-500" />
+  }
+];
 
 function Project() {
   return (
-    <div className='bg-white py-[5rem] w-full overflow-x-hidden text-center'>
-      <h1 className='text-[2.5rem] md:text-[3rem] font-bold'>Projects</h1>
-      <p className='bg-yellow-400 py-1 w-[4rem] mx-auto rounded-[10px] mt-2'></p>
-
-      <div className='grid grid-rows-1 md:grid-cols-[60%_40%] gap-5 place-items-center mt-16 px-5'>
-        <div className='md:ml-[6rem] md:mb-0 mb-4'>
-          <img src={Queryla} alt="" className='w-[45rem]'/>
-        </div>
-
-      
-        <div className='md:text-start md:pr-[10rem] '>
-          <h1 className='text-[30px] font-bold mb-5'>Queryla</h1>
-          <p className='text-[20px] mb-9'>
-            Designed and developed a full-stack system that translates natural language questions into optimized SQL and NoSQL queries, executes them across MySQL, MongoDB, and PostgreSQL, and presents results with dynamic data visualizations. 
+    <section className='bg-[#FDFDFD] py-24 w-full overflow-x-hidden'>
+      <div className='max-w-7xl mx-auto px-6'>
+        
+        {/* Header Section */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className='text-center mb-20'
+        >
+          <h1 className='text-5xl md:text-7xl font-[900] text-slate-900 tracking-tighter mb-4'>
+            Featured <span className='text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-orange-600 italic font-serif'>Works</span>
+          </h1>
+          <p className='text-slate-500 font-medium text-lg max-w-xl mx-auto'>
+            A collection of full-stack applications and AI experiments focused on solving real-world data challenges.
           </p>
-          <a href="https://yashsawant027.github.io/Queryla2.0/">
-            <button className='hover:translate-y-[-0.5rem] duration-500 text-[20px] text-white bg-yellow-400 px-10 py-3 font-bold rounded-[10px]'>
-            Live App
-          </button>
-          </a>
-          <a href="https://github.com/YashSawant027/Queryla2.0">
-            <FontAwesomeIcon icon={faGithub} className='text-[35px] cursor-pointer ml-5 hover:translate-y-[-0.5rem] duration-500'/>
-          </a>
+        </motion.div>
+
+        {/* Project List: Staggered Layout */}
+        <div className='space-y-32'>
+          {PROJECT_DATA.map((proj, index) => (
+            <motion.div 
+              key={index}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              className={`flex flex-col lg:flex-row items-center gap-12 lg:gap-20 ${index % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}
+            >
+              {/* Image Side with Decorative Background */}
+              <div className='flex-1 relative group w-full'>
+                <div className='absolute -inset-4 bg-slate-100 rounded-[2.5rem] scale-95 group-hover:scale-100 transition-transform duration-700 opacity-50' />
+                <motion.div 
+                  whileHover={{ y: -10 }}
+                  className='relative rounded-[2rem] overflow-hidden shadow-2xl border border-slate-100'
+                >
+                  <img src={proj.img} alt={proj.title} className='w-full h-auto object-cover transform transition-transform duration-700 group-hover:scale-105' />
+                </motion.div>
+              </div>
+
+              {/* Content Side */}
+              <div className='flex-1 space-y-6 text-left'>
+                <div className='flex items-center gap-3'>
+                  <div className='p-2 bg-slate-50 rounded-lg shadow-sm'>
+                    {proj.icon}
+                  </div>
+                  <h2 className='text-3xl md:text-4xl font-black text-slate-900 tracking-tight'>
+                    {proj.title}
+                  </h2>
+                </div>
+
+                <div className='flex flex-wrap gap-2'>
+                  {proj.tags.map(tag => (
+                    <span key={tag} className='text-[10px] font-black uppercase tracking-widest px-3 py-1 bg-slate-100 text-slate-500 rounded-full'>
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                <p className='text-lg md:text-xl text-slate-600 font-medium leading-relaxed'>
+                  {proj.desc}
+                </p>
+
+                <div className='flex items-center gap-6 pt-4'>
+                  <motion.a 
+                    href={proj.live} 
+                    target="_blank" rel="noreferrer"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className='px-8 py-4 bg-yellow-400 text-slate-900 rounded-xl font-bold flex items-center gap-2 shadow-lg shadow-yellow-200 transition-all'
+                  >
+                    Live App <ExternalLink size={18} />
+                  </motion.a>
+                  
+                  <motion.a 
+                    href={proj.github} 
+                    target="_blank" rel="noreferrer"
+                    whileHover={{ scale: 1.1, color: "#000" }}
+                    className='text-slate-400 transition-colors'
+                  >
+                    <Github size={30} />
+                  </motion.a>
+                </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
-
-      <div className='grid grid-rows-1 md:grid-cols-[60%_40%] gap-5 place-items-center mt-16 px-5'>
-        <div className='md:ml-[6rem] md:mb-0 mb-4'>
-          <img src={medibot} alt="" className='w-[95rem] bg-white'/>
-        </div>
-
-      
-        <div className='md:text-start md:pr-[10rem] '>
-          <h1 className='text-[30px] font-bold mb-5'>Doctor Bot</h1>
-          <p className='text-[20px] mb-9'>
-            MediBot is a real-time AI-powered doctor assistant that helps users with health-related questions through a chat interface. It understands messages in multiple languages and transliterated text, suggests safe remedies and precautions, and advises when to consult a doctor—while prioritizing clarity, professionalism, and medical safety.
-          </p>
-          <a href="https://medi-bot-7pwo.vercel.app/">
-            <button className='hover:translate-y-[-0.5rem] duration-500 text-[20px] text-white bg-yellow-400 px-10 py-3 font-bold rounded-[10px]'>Live App</button>
-          </a>
-          
-          <a href="https://github.com/YashSawant027/MediBot"><FontAwesomeIcon icon={faGithub} className='text-[35px] cursor-pointer ml-5 hover:translate-y-[-0.5rem] duration-500'/></a>
-        </div>
-      </div>
-
-      <div className='grid grid-rows-1 md:grid-cols-[60%_40%] gap-5 place-items-center mt-16 px-5'>
-        <div className='md:ml-[6rem] md:mb-0 mb-4'>
-          <img src={energy} alt="" className='w-[45rem]'/>
-        </div>
-
-      
-        <div className='text-center md:text-start md:pr-[10rem] '>
-          <h1 className='text-[30px] font-bold mb-5'>Energy Tracker</h1>
-          <p className='md:text-[20px] mb-9'>
-            Energy Tracker is a web app that estimates household electricity usage based on user input and suggests tips if consumption exceeds expected levels. It helps promote smarter, energy-efficient habits.
-          </p>
-          <a href="https://yashsawant027.github.io/Energy-Tracker/">
-            <button className='hover:translate-y-[-0.5rem] duration-500 text-[20px] text-white bg-yellow-400 px-10 py-3 font-bold rounded-[10px]'>
-            Live App
-            </button>
-          </a>
-          <a href="https://github.com/YashSawant027/Energy-Tracker">
-            <FontAwesomeIcon icon={faGithub} className='text-[35px] cursor-pointer ml-5 hover:translate-y-[-0.5rem] duration-500'/>
-          </a>
-        </div>
-      </div>
-
-      <div className='grid grid-rows-1 md:grid-cols-[60%_40%] gap-5 place-items-center mt-16 px-5'>
-        <div className='md:ml-[6rem] md:mb-0 mb-4'>
-          <img src={ttt} alt="" className='w-[45rem]'/>
-        </div>
-
-      
-        <div className='md:text-start md:pr-[10rem] '>
-          <h1 className='text-[30px] font-bold mb-5'>Tic Tac Toe</h1>
-          <p className='text-[20px] mb-9'>
-            Tic Tac Toe is a classic two-player game built with React, featuring clean UI, responsive design, and simple game logic.
-          </p>
-          <a href="https://github.com/YashSawant027/tic-tac-toe">
-            <FontAwesomeIcon icon={faGithub} className='text-[35px] cursor-pointer ml-5 hover:translate-y-[-0.5rem] duration-500'/>
-          </a>
-        </div>
-      </div>
-      
-    </div>
+    </section>
   );
 }
 
