@@ -1,14 +1,24 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink, Github, Code2, Sparkles, Activity, Play } from 'lucide-react';
+import { ExternalLink, Github, Code2, Sparkles, Activity, Play, Scan, Search } from 'lucide-react';
 
 // Assets
 import energy from './ProjectAssets/EnergyTracker.png';
 import ttt from './ProjectAssets/ttt.png';
-import Queryla from './ProjectAssets/Queryla.png';
+import Queryla from '../assets/queryla.png';
+import NutriScan from '../assets/nutriscan.png';
 import medibot from './ProjectAssets/medibot.png';
 
 const PROJECT_DATA = [
+  {
+    title: "NutriScan",
+    desc: "AI-powered nutrition analysis platform that scans food products to detect ingredients, health risks, and provide personalized dietary insights with real-time results.",
+    img: NutriScan,
+    live: "https://nutriscan-one-027.vercel.app/",
+    github: "https://github.com/YashSawant027/NutriScan",
+    tags: ["React", "FastAPI", "LLM", "SQL/NoSQL"],
+    icon: <Search className="text-green-500" />
+  },
   {
     title: "Queryla",
     desc: "A full-stack NLP-to-SQL engine that translates natural language into optimized queries across MySQL, MongoDB, and PostgreSQL with dynamic data visualizations.",
