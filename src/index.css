@@ -200,9 +200,17 @@ footer{ border-top:1px solid var(--line-strong); padding:28px 0; }
 .footer-row{ display:flex; justify-content:space-between; font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--slate); text-transform:uppercase; letter-spacing:0.04em; }
 
 @media (max-width:900px){
+  .wrap{ padding: 0 20px; }
   .hero-head{ font-size:clamp(40px,13vw,80px); }
+  .hero-head.one-line{ font-size:clamp(32px, 11vw, 80px); white-space: normal; }
+  .hero-actions { flex-direction: column; gap: 12px; }
+  .btn-block.outline { border-left: 1px solid var(--ink); }
+  
   .tb-row{ grid-template-columns:1fr 1fr; }
-  .tb-cell:nth-child(3){ border-left:none; }
+  .tb-cell:nth-child(odd){ border-left:none; }
+  .tb-cell{ border-bottom: 1px solid var(--line); }
+  .tb-cell:last-child{ border-bottom: none; grid-column: 1 / -1; border-left: none; }
+  
   .about-layout{ grid-template-columns:1fr; gap:50px; }
   .work-row{ grid-template-columns:1fr; gap:14px; padding:36px 0; }
   .work-num{ font-size:44px; }
@@ -211,9 +219,17 @@ footer{ border-top:1px solid var(--line-strong); padding:28px 0; }
   .exp-tag{ justify-self:start; }
   .contact-layout{ grid-template-columns:1fr; gap:50px; }
   .nav-links{ display:none; }
-  .sec-head{ flex-direction:column; align-items:flex-start; }
+  .sec-head{ flex-direction:column; align-items:flex-start; gap: 16px; margin-bottom: 40px; }
   .sec-desc{ text-align:left; }
-  .metrics{ grid-template-columns:1fr; }
-  .metric{ border-right:none; border-bottom:1px solid var(--line); padding-bottom:16px; margin-bottom:16px;}
+  
+  /* Keep metrics in a single line, but scale them down for mobile */
+  .metrics{ grid-template-columns:repeat(3, 1fr); gap: 10px; }
+  .metric{ padding-left:12px; border-bottom:none; margin-bottom:0; padding-bottom:0; border-right:1px solid var(--line); }
+  .metric:first-child{ padding-left:0; }
+  .metric:last-child{ border-right:none; }
+  .metric-val{ font-size: 32px; }
+  .metric-lbl{ font-size: 9px; line-height: 1.2; }
+  
+  .footer-row { flex-direction: column; gap: 12px; text-align: center; }
 }
 @media (prefers-reduced-motion:reduce){ *{ animation:none!important; transition:none!important; } }
