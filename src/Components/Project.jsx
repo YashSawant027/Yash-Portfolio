@@ -35,7 +35,7 @@ function Project() {
             </div>
             <div className="work-links">
               <a href="https://yashsawant027.github.io/Queryla2.0/" target="_blank" rel="noopener noreferrer">Live demo <i>↗</i></a>
-              <a href="#">Source <i>↗</i></a>
+              <a href="https://github.com/YashSawant027/Queryla2.0" target="_blank" rel="noopener noreferrer">GitHub <i>↗</i></a>
             </div>
           </motion.div>
 
@@ -52,7 +52,7 @@ function Project() {
             </div>
             <div className="work-links">
               <a href="https://nutriscan-one-027.vercel.app" target="_blank" rel="noopener noreferrer">Live demo <i>↗</i></a>
-              <a href="#">Source <i>↗</i></a>
+              <a href="https://github.com/YashSawant027/NutriScan" target="_blank" rel="noopener noreferrer">GitHub <i>↗</i></a>
             </div>
           </motion.div>
 
@@ -68,8 +68,8 @@ function Project() {
               <div className="work-tags"><span>React</span><span>FastAPI</span><span>LangChain</span><span>Groq</span></div>
             </div>
             <div className="work-links">
-              <a href="#">Live demo <i>↗</i></a>
-              <a href="#">Source <i>↗</i></a>
+              <a href="https://github.com/YashSawant027/MediBot" target="_blank" rel="noopener noreferrer">Live demo <i>↗</i></a>
+              <a href="https://github.com/YashSawant027/MediBot" target="_blank" rel="noopener noreferrer">GitHub <i>↗</i></a>
             </div>
           </motion.div>
 
@@ -86,7 +86,7 @@ function Project() {
             </div>
             <div className="work-links">
               <a href="https://yashsawant027.github.io/Energy-Tracker/" target="_blank" rel="noopener noreferrer">Live demo <i>↗</i></a>
-              <a href="#">Source <i>↗</i></a>
+              <a href="https://github.com/YashSawant027/Energy-Tracker" target="_blank" rel="noopener noreferrer">GitHub <i>↗</i></a>
             </div>
           </motion.div>
         </div>
