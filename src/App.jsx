@@ -42,32 +42,32 @@ function GridBackground() {
   // Initial random sparkle animation on load
   React.useEffect(() => {
     if (gridSize.rows === 0) return;
-    
+
     const totalCells = gridSize.rows * gridSize.cols;
-    
+
     // Run the sparkle effect for the first 2 seconds
     const interval = setInterval(() => {
       const cells = document.querySelectorAll('.grid-cell');
       const numCells = Math.floor(Math.random() * 5) + 2; // Pick 2 to 6 random cells
-      
+
       for (let i = 0; i < numCells; i++) {
         let randomIdx;
         let isExcluded = true;
         let attempts = 0;
-        
+
         // Find a random cell that doesn't overlap with the main text
         while (isExcluded && attempts < 15) {
           randomIdx = Math.floor(Math.random() * totalCells);
           const cell = cells[randomIdx];
           if (!cell) break;
-          
+
           const cellRect = cell.getBoundingClientRect();
           const heroHead = document.querySelector('.hero-head');
           const heroAnnotate = document.querySelector('.hero-annotate');
           const heroCoord = document.querySelector('.coord');
-          
+
           let overlaps = false;
-          
+
           // Check collision with text elements (adding a bit of padding)
           const checkCollision = (el) => {
             if (!el) return false;
@@ -80,17 +80,17 @@ function GridBackground() {
               cellRect.bottom > rect.top - padding
             );
           };
-          
+
           if (checkCollision(heroHead) || checkCollision(heroAnnotate) || checkCollision(heroCoord)) {
             overlaps = true;
           }
-          
+
           isExcluded = overlaps;
           attempts++;
         }
 
         const cell = cells[randomIdx];
-        
+
         if (cell && !isExcluded) {
           cell.classList.add('active');
           // Remove the active class after a random short duration (simulating quick hovers)
@@ -99,7 +99,7 @@ function GridBackground() {
           }, Math.random() * 400 + 200);
         }
       }
-    }, 100); 
+    }, 100);
 
     // Stop after 2 seconds
     const stopTimeout = setTimeout(() => {
@@ -113,7 +113,7 @@ function GridBackground() {
   }, [gridSize]);
 
   return (
-    <div 
+    <div
       className="absolute inset-0 z-0 overflow-hidden flex flex-wrap"
       style={{
         maskImage: 'radial-gradient(ellipse 80% 70% at 50% 30%, black 40%, transparent 90%)',
@@ -132,12 +132,12 @@ function App() {
     <>
       <div className="grain"></div>
       <Nav />
-      
+
       {/* HERO */}
       <section className="hero">
         <GridBackground />
         <div className="cross tl"></div><div className="cross tr"></div>
-        <motion.div 
+        <motion.div
           className="wrap hero-body"
           variants={staggerContainer}
           initial="hidden"
@@ -155,7 +155,7 @@ function App() {
           </motion.div>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           className="title-block wrap"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -164,9 +164,9 @@ function App() {
           <div className="tb-row">
             <div className="tb-cell"><div className="tb-label">Subject</div><div className="tb-value">Yash Sawant</div></div>
             <div className="tb-cell"><div className="tb-label">Discipline</div><div className="tb-value">AI &amp; Full-Stack Dev</div></div>
-            <div className="tb-cell"><div className="tb-label">Primary stack</div><div className="tb-value">React / FastAPI</div></div>
-            <div className="tb-cell"><div className="tb-label">Status</div><div className="tb-value" style={{color: 'var(--copper)'}}>● Experienced</div></div>
-            <div className="tb-cell"><div className="tb-label">Revision</div><div className="tb-value">v2.0 — 2026</div></div>
+            <div className="tb-cell"><div className="tb-label">Primary stack</div><div className="tb-value">Python / LangChain / .NET</div></div>
+            <div className="tb-cell"><div className="tb-label">Status</div><div className="tb-value" style={{ color: 'var(--copper)' }}>● Experienced</div></div>
+            <div className="tb-cell"><div className="tb-label">Revision</div><div className="tb-value">2026</div></div>
           </div>
         </motion.div>
       </section>

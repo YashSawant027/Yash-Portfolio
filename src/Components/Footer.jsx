@@ -5,7 +5,7 @@ function Footer() {
     <footer>
       <div className="wrap footer-row">
         <span>© 2026 Yash Sawant</span>
-        <span>Rev. 2.0 — Designed &amp; built in Mumbai</span>
+        <span>Designed &amp; built by Yash</span>
       </div>
     </footer>
   );
