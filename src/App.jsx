@@ -51,10 +51,47 @@ function GridBackground() {
       const numCells = Math.floor(Math.random() * 5) + 2; // Pick 2 to 6 random cells
       
       for (let i = 0; i < numCells; i++) {
-        const randomIdx = Math.floor(Math.random() * totalCells);
+        let randomIdx;
+        let isExcluded = true;
+        let attempts = 0;
+        
+        // Find a random cell that doesn't overlap with the main text
+        while (isExcluded && attempts < 15) {
+          randomIdx = Math.floor(Math.random() * totalCells);
+          const cell = cells[randomIdx];
+          if (!cell) break;
+          
+          const cellRect = cell.getBoundingClientRect();
+          const heroHead = document.querySelector('.hero-head');
+          const heroAnnotate = document.querySelector('.hero-annotate');
+          const heroCoord = document.querySelector('.coord');
+          
+          let overlaps = false;
+          
+          // Check collision with text elements (adding a bit of padding)
+          const checkCollision = (el) => {
+            if (!el) return false;
+            const rect = el.getBoundingClientRect();
+            const padding = 20; // 20px buffer around text
+            return (
+              cellRect.left < rect.right + padding &&
+              cellRect.right > rect.left - padding &&
+              cellRect.top < rect.bottom + padding &&
+              cellRect.bottom > rect.top - padding
+            );
+          };
+          
+          if (checkCollision(heroHead) || checkCollision(heroAnnotate) || checkCollision(heroCoord)) {
+            overlaps = true;
+          }
+          
+          isExcluded = overlaps;
+          attempts++;
+        }
+
         const cell = cells[randomIdx];
         
-        if (cell) {
+        if (cell && !isExcluded) {
           cell.classList.add('active');
           // Remove the active class after a random short duration (simulating quick hovers)
           setTimeout(() => {
