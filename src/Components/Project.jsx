@@ -2,8 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const fadeInUp = {
-  hidden: { opacity: 0, y: 80 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] } }
 };
 
 function Project() {
@@ -12,7 +12,7 @@ function Project() {
       <div className="wrap">
         <motion.div 
           className="sec-head"
-          initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeInUp}
+          initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.1 }} variants={fadeInUp}
         >
           <div>
             <div className="sec-num">03 — Archive</div>
@@ -24,7 +24,7 @@ function Project() {
         <div className="work-list">
           <motion.div 
             className="work-row"
-            initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeInUp}
+            initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.1 }} variants={fadeInUp}
           >
             <div className="work-num">01</div>
             <div className="work-content">
@@ -41,7 +41,7 @@ function Project() {
 
           <motion.div 
             className="work-row"
-            initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeInUp}
+            initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.1 }} variants={fadeInUp}
           >
             <div className="work-num">02</div>
             <div className="work-content">
@@ -58,7 +58,7 @@ function Project() {
 
           <motion.div 
             className="work-row"
-            initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeInUp}
+            initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.1 }} variants={fadeInUp}
           >
             <div className="work-num">03</div>
             <div className="work-content">
@@ -75,11 +75,11 @@ function Project() {
 
           <motion.div 
             className="work-row"
-            initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeInUp}
+            initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.1 }} variants={fadeInUp}
           >
             <div className="work-num">04</div>
             <div className="work-content">
-              <div className="work-meta-top"><span className="work-year">2024</span><span className="work-status">Data Visualisation</span></div>
+              <div className="work-meta-top"><span className="work-year">2023</span><span className="work-status">Data Visualisation</span></div>
               <h3 className="work-title">Energy Tracker Application</h3>
               <p className="work-desc">Built a web app for tracking daily electricity usage and identifying consumption patterns. Wrote comprehensive unit tests to guarantee the accuracy of usage calculations and reports, with a clean dashboard and data-visualisation graphs for intuitive energy monitoring.</p>
               <div className="work-tags"><span>React</span><span>Tailwind CSS</span></div>

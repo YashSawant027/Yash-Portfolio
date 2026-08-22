@@ -1,9 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faReact, faPython, faHtml5, faGitAlt } from '@fortawesome/free-brands-svg-icons';
+import { Database, Wind, Zap, Code, Brain, Server, Terminal, Settings, Network } from 'lucide-react';
 
 const fadeInUp = {
-  hidden: { opacity: 0, y: 80 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] } }
 };
 
 const staggerContainer = {
@@ -11,8 +14,8 @@ const staggerContainer = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.15,
-      delayChildren: 0.2
+      staggerChildren: 0.08,
+      delayChildren: 0.1
     }
   }
 };
@@ -25,7 +28,7 @@ function About() {
         <div className="wrap">
           <motion.div 
             className="sec-head"
-            initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeInUp}
+            initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.1 }} variants={fadeInUp}
           >
             <div>
               <div className="sec-num">01 — Profile</div>
@@ -37,7 +40,7 @@ function About() {
           <div className="about-layout">
             <motion.div 
               className="about-copy"
-              initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeInUp}
+              initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.1 }} variants={fadeInUp}
             >
               <p>I'm Yash, a <span className="u">BSc IT graduate</span> based in Mumbai, specialising in responsive interfaces and AI-powered web applications.</p>
               <p>I'm experienced in integrating <strong>Large Language Models</strong> with modern frameworks like <strong>FastAPI</strong> and <strong>React</strong> — passionate about production-ready solutions built on RAG architectures, SQL/NoSQL databases, and clean, testable code.</p>
@@ -52,31 +55,42 @@ function About() {
 
             <motion.div 
               className="stack-list"
-              initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={staggerContainer}
+              initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.1 }} variants={staggerContainer}
             >
-              <motion.div variants={fadeInUp} className="stack-group">
-                <div className="stack-group-head"><h4>Frontend</h4><span>04</span></div>
+              <div className="stack-group">
+                <motion.div variants={fadeInUp} className="stack-group-head"><h4>Frontend</h4><span>04</span></motion.div>
                 <div className="stack-items">
-                  <div className="stack-item">React.js</div><div className="stack-item">Tailwind CSS</div><div className="stack-item">Framer Motion</div><div className="stack-item">HTML5 &amp; CSS3</div>
+                  <motion.div variants={fadeInUp} className="stack-item" style={{display:'inline-flex', alignItems:'center', gap:'8px'}}><FontAwesomeIcon icon={faReact} /> React.js</motion.div>
+                  <motion.div variants={fadeInUp} className="stack-item" style={{display:'inline-flex', alignItems:'center', gap:'8px'}}><Wind size={15} /> Tailwind CSS</motion.div>
+                  <motion.div variants={fadeInUp} className="stack-item" style={{display:'inline-flex', alignItems:'center', gap:'8px'}}><Zap size={15} /> Framer Motion</motion.div>
+                  <motion.div variants={fadeInUp} className="stack-item" style={{display:'inline-flex', alignItems:'center', gap:'8px'}}><FontAwesomeIcon icon={faHtml5} /> HTML5 &amp; CSS3</motion.div>
                 </div>
-              </motion.div>
-              <motion.div variants={fadeInUp} className="stack-group">
-                <div className="stack-group-head"><h4>Backend &amp; AI</h4><span>05</span></div>
+              </div>
+              <div className="stack-group">
+                <motion.div variants={fadeInUp} className="stack-group-head"><h4>Backend &amp; AI</h4><span>05</span></motion.div>
                 <div className="stack-items">
-                  <div className="stack-item">Python</div><div className="stack-item">Django</div><div className="stack-item">FastAPI</div><div className="stack-item">LangChain</div><div className="stack-item">Groq / Llama 3</div>
+                  <motion.div variants={fadeInUp} className="stack-item" style={{display:'inline-flex', alignItems:'center', gap:'8px'}}><FontAwesomeIcon icon={faPython} /> Python</motion.div>
+                  <motion.div variants={fadeInUp} className="stack-item" style={{display:'inline-flex', alignItems:'center', gap:'8px'}}><Zap size={15} /> FastAPI</motion.div>
+                  <motion.div variants={fadeInUp} className="stack-item" style={{display:'inline-flex', alignItems:'center', gap:'8px'}}><Code size={15} /> LangChain</motion.div>
+                  <motion.div variants={fadeInUp} className="stack-item" style={{display:'inline-flex', alignItems:'center', gap:'8px'}}><Network size={15} /> LangGraph</motion.div>
+                  <motion.div variants={fadeInUp} className="stack-item" style={{display:'inline-flex', alignItems:'center', gap:'8px'}}><Brain size={15} /> Groq / Llama 3</motion.div>
                 </div>
-              </motion.div>
-              <motion.div variants={fadeInUp} className="stack-group">
-                <div className="stack-group-head"><h4>Data, Tools &amp; DevOps</h4><span>05</span></div>
+              </div>
+              <div className="stack-group">
+                <motion.div variants={fadeInUp} className="stack-group-head"><h4>Data, Tools &amp; DevOps</h4><span>05</span></motion.div>
                 <div className="stack-items">
-                  <div className="stack-item">SQL</div><div className="stack-item">PostgreSQL</div><div className="stack-item">.NET</div><div className="stack-item">CI/CD</div><div className="stack-item">Git</div>
+                  <motion.div variants={fadeInUp} className="stack-item" style={{display:'inline-flex', alignItems:'center', gap:'8px'}}><Database size={15} /> SQL</motion.div>
+                  <motion.div variants={fadeInUp} className="stack-item" style={{display:'inline-flex', alignItems:'center', gap:'8px'}}><Database size={15} /> PostgreSQL</motion.div>
+                  <motion.div variants={fadeInUp} className="stack-item" style={{display:'inline-flex', alignItems:'center', gap:'8px'}}><Terminal size={15} /> .NET</motion.div>
+                  <motion.div variants={fadeInUp} className="stack-item" style={{display:'inline-flex', alignItems:'center', gap:'8px'}}><Settings size={15} /> CI/CD</motion.div>
+                  <motion.div variants={fadeInUp} className="stack-item" style={{display:'inline-flex', alignItems:'center', gap:'8px'}}><FontAwesomeIcon icon={faGitAlt} /> Git</motion.div>
                 </div>
-              </motion.div>
-              <motion.div variants={fadeInUp} className="stack-group" style={{borderBottom: 'none'}}>
-                <div className="stack-group-head"><h4>Education</h4><span>—</span></div>
-                <div className="ledger-row" style={{padding: '0 0 12px'}}><span className="ledger-label">BSc IT</span><span className="ledger-value" style={{fontSize: '14px'}}>Bhavan's College · 2023–2026 · CGPA 7.5</span></div>
-                <div className="ledger-row" style={{padding: '0 0 12px', borderBottom: 'none'}}><span className="ledger-label">HSC — Commerce</span><span className="ledger-value" style={{fontSize: '14px'}}>Valia College · 2023 · 87%</span></div>
-              </motion.div>
+              </div>
+              <div className="stack-group" style={{borderBottom: 'none'}}>
+                <motion.div variants={fadeInUp} className="stack-group-head"><h4>Education</h4><span>—</span></motion.div>
+                <motion.div variants={fadeInUp} className="ledger-row" style={{padding: '0 0 12px'}}><span className="ledger-label">BSc IT</span><span className="ledger-value" style={{fontSize: '14px'}}>Bhavan's College · 2023–2026 · CGPA 7.5</span></motion.div>
+                <motion.div variants={fadeInUp} className="ledger-row" style={{padding: '0 0 12px', borderBottom: 'none'}}><span className="ledger-label">HSC — Commerce</span><span className="ledger-value" style={{fontSize: '14px'}}>Valia College · 2023 · 87%</span></motion.div>
+              </div>
             </motion.div>
           </div>
         </div>
@@ -87,7 +101,7 @@ function About() {
         <div className="wrap">
           <motion.div 
             className="sec-head"
-            initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeInUp}
+            initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.1 }} variants={fadeInUp}
           >
             <div>
               <div className="sec-num">02 — Experience</div>
@@ -98,15 +112,15 @@ function About() {
 
           <motion.div 
             className="exp-list"
-            initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={staggerContainer}
+            initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.1 }} variants={staggerContainer}
           >
             <motion.div variants={fadeInUp} className="exp-row is-current">
               <span className="exp-dot"></span>
               <div>
-                <span className="exp-period">2025 — Present</span>
+                <span className="exp-period">2026 — Present</span>
                 <div className="exp-role">AI &amp; Full-Stack Developer</div>
                 <div className="exp-org">BDO — one of the Big 5 professional services firms</div>
-                <p className="exp-desc">Building and maintaining AI-integrated full-stack applications, working across React frontends and Python/FastAPI backends within a professional services environment.</p>
+                <p className="exp-desc">Building and maintaining AI-integrated full-stack applications and automations, working across .NET and Python/FastAPI backends within a professional services environment.</p>
               </div>
               <div className="exp-tag live">Current role</div>
             </motion.div>
@@ -114,7 +128,7 @@ function About() {
             <motion.div variants={fadeInUp} className="exp-row">
               <span className="exp-dot"></span>
               <div>
-                <span className="exp-period">2024 — 2025 · 6 months</span>
+                <span className="exp-period">2025 — 2026 · 6 months</span>
                 <div className="exp-role">Full-Stack Developer — Intern</div>
                 <div className="exp-org">Pestact Services</div>
                 <p className="exp-desc">Contributed across the stack on production features, gaining hands-on experience with real-world development workflows, code reviews, and shipping to users.</p>
