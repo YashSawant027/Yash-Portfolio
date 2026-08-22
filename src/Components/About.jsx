@@ -43,7 +43,7 @@ function About() {
               initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.1 }} variants={fadeInUp}
             >
               <p>I'm Yash, a <span className="u">BSc IT graduate</span> based in Mumbai, specialising in responsive interfaces and AI-powered web applications.</p>
-              <p>I'm experienced in integrating <strong>Large Language Models</strong> with modern frameworks like <strong>FastAPI</strong> and <strong>React</strong> — passionate about production-ready solutions built on RAG architectures, SQL/NoSQL databases, and clean, testable code.</p>
+              <p>I'm experienced in integrating <strong>Large Language Models</strong> using <strong>Python</strong> and modern frameworks like <strong>LangChain</strong> and <strong>.NET</strong> — passionate about production-ready solutions built on RAG architectures, SQL/NoSQL databases, and clean, testable code.</p>
               <p>An experienced full-stack developer with hands-on industry experience, always open to conversations about interesting problems and ambitious teams.</p>
 
               <div className="metrics">
