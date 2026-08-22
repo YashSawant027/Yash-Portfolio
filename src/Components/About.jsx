@@ -26,7 +26,7 @@ function About() {
       {/* ABOUT */}
       <section className="section" id="about">
         <div className="wrap">
-          <motion.div 
+          <motion.div
             className="sec-head"
             initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.1 }} variants={fadeInUp}
           >
@@ -38,7 +38,7 @@ function About() {
           </motion.div>
 
           <div className="about-layout">
-            <motion.div 
+            <motion.div
               className="about-copy"
               initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.1 }} variants={fadeInUp}
             >
@@ -53,43 +53,43 @@ function About() {
               </div>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               className="stack-list"
               initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.1 }} variants={staggerContainer}
             >
               <div className="stack-group">
                 <motion.div variants={fadeInUp} className="stack-group-head"><h4>Frontend</h4><span>04</span></motion.div>
                 <div className="stack-items">
-                  <motion.div variants={fadeInUp} className="stack-item" style={{display:'inline-flex', alignItems:'center', gap:'8px'}}><FontAwesomeIcon icon={faReact} /> React.js</motion.div>
-                  <motion.div variants={fadeInUp} className="stack-item" style={{display:'inline-flex', alignItems:'center', gap:'8px'}}><Wind size={15} /> Tailwind CSS</motion.div>
-                  <motion.div variants={fadeInUp} className="stack-item" style={{display:'inline-flex', alignItems:'center', gap:'8px'}}><Zap size={15} /> Framer Motion</motion.div>
-                  <motion.div variants={fadeInUp} className="stack-item" style={{display:'inline-flex', alignItems:'center', gap:'8px'}}><FontAwesomeIcon icon={faHtml5} /> HTML5 &amp; CSS3</motion.div>
+                  <motion.div variants={fadeInUp} className="stack-item" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}><FontAwesomeIcon icon={faReact} /> React.js</motion.div>
+                  <motion.div variants={fadeInUp} className="stack-item" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}><Wind size={15} /> Tailwind CSS</motion.div>
+                  <motion.div variants={fadeInUp} className="stack-item" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}><Zap size={15} /> Framer Motion</motion.div>
+                  <motion.div variants={fadeInUp} className="stack-item" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}><FontAwesomeIcon icon={faHtml5} /> HTML5 &amp; CSS3</motion.div>
                 </div>
               </div>
               <div className="stack-group">
                 <motion.div variants={fadeInUp} className="stack-group-head"><h4>Backend &amp; AI</h4><span>05</span></motion.div>
                 <div className="stack-items">
-                  <motion.div variants={fadeInUp} className="stack-item" style={{display:'inline-flex', alignItems:'center', gap:'8px'}}><FontAwesomeIcon icon={faPython} /> Python</motion.div>
-                  <motion.div variants={fadeInUp} className="stack-item" style={{display:'inline-flex', alignItems:'center', gap:'8px'}}><Zap size={15} /> FastAPI</motion.div>
-                  <motion.div variants={fadeInUp} className="stack-item" style={{display:'inline-flex', alignItems:'center', gap:'8px'}}><Code size={15} /> LangChain</motion.div>
-                  <motion.div variants={fadeInUp} className="stack-item" style={{display:'inline-flex', alignItems:'center', gap:'8px'}}><Network size={15} /> LangGraph</motion.div>
-                  <motion.div variants={fadeInUp} className="stack-item" style={{display:'inline-flex', alignItems:'center', gap:'8px'}}><Brain size={15} /> Groq / Llama 3</motion.div>
+                  <motion.div variants={fadeInUp} className="stack-item" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}><FontAwesomeIcon icon={faPython} /> Python</motion.div>
+                  <motion.div variants={fadeInUp} className="stack-item" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}><Zap size={15} /> FastAPI</motion.div>
+                  <motion.div variants={fadeInUp} className="stack-item" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}><Code size={15} /> LangChain</motion.div>
+                  <motion.div variants={fadeInUp} className="stack-item" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}><Network size={15} /> LangGraph</motion.div>
+                  <motion.div variants={fadeInUp} className="stack-item" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}><Brain size={15} /> Groq / Llama 3</motion.div>
                 </div>
               </div>
               <div className="stack-group">
                 <motion.div variants={fadeInUp} className="stack-group-head"><h4>Data, Tools &amp; DevOps</h4><span>05</span></motion.div>
                 <div className="stack-items">
-                  <motion.div variants={fadeInUp} className="stack-item" style={{display:'inline-flex', alignItems:'center', gap:'8px'}}><Database size={15} /> SQL</motion.div>
-                  <motion.div variants={fadeInUp} className="stack-item" style={{display:'inline-flex', alignItems:'center', gap:'8px'}}><Database size={15} /> PostgreSQL</motion.div>
-                  <motion.div variants={fadeInUp} className="stack-item" style={{display:'inline-flex', alignItems:'center', gap:'8px'}}><Terminal size={15} /> .NET</motion.div>
-                  <motion.div variants={fadeInUp} className="stack-item" style={{display:'inline-flex', alignItems:'center', gap:'8px'}}><Settings size={15} /> CI/CD</motion.div>
-                  <motion.div variants={fadeInUp} className="stack-item" style={{display:'inline-flex', alignItems:'center', gap:'8px'}}><FontAwesomeIcon icon={faGitAlt} /> Git</motion.div>
+                  <motion.div variants={fadeInUp} className="stack-item" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}><Database size={15} /> SQL</motion.div>
+                  <motion.div variants={fadeInUp} className="stack-item" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}><Database size={15} /> PostgreSQL</motion.div>
+                  <motion.div variants={fadeInUp} className="stack-item" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}><Terminal size={15} /> .NET</motion.div>
+                  <motion.div variants={fadeInUp} className="stack-item" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}><Settings size={15} /> CI/CD</motion.div>
+                  <motion.div variants={fadeInUp} className="stack-item" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}><FontAwesomeIcon icon={faGitAlt} /> Git</motion.div>
                 </div>
               </div>
-              <div className="stack-group" style={{borderBottom: 'none'}}>
+              <div className="stack-group" style={{ borderBottom: 'none' }}>
                 <motion.div variants={fadeInUp} className="stack-group-head"><h4>Education</h4><span>—</span></motion.div>
-                <motion.div variants={fadeInUp} className="ledger-row" style={{padding: '0 0 12px'}}><span className="ledger-label">BSc IT</span><span className="ledger-value" style={{fontSize: '14px'}}>Bhavan's College · 2023–2026 · CGPA 7.5</span></motion.div>
-                <motion.div variants={fadeInUp} className="ledger-row" style={{padding: '0 0 12px', borderBottom: 'none'}}><span className="ledger-label">HSC — Commerce</span><span className="ledger-value" style={{fontSize: '14px'}}>Valia College · 2023 · 87%</span></motion.div>
+                <motion.div variants={fadeInUp} className="ledger-row" style={{ padding: '0 0 12px' }}><span className="ledger-label">BSc IT</span><span className="ledger-value" style={{ fontSize: '14px' }}>Bhavan's College · 2023–2026 · Grade A</span></motion.div>
+                <motion.div variants={fadeInUp} className="ledger-row" style={{ padding: '0 0 12px', borderBottom: 'none' }}><span className="ledger-label">HSC — Commerce</span><span className="ledger-value" style={{ fontSize: '14px' }}>Valia College · 2023 · 87%</span></motion.div>
               </div>
             </motion.div>
           </div>
@@ -97,9 +97,9 @@ function About() {
       </section>
 
       {/* EXPERIENCE */}
-      <section className="section tight" id="experience" style={{background: 'var(--paper-2)', paddingTop: '0'}}>
+      <section className="section tight" id="experience" style={{ background: 'var(--paper-2)', paddingTop: '0' }}>
         <div className="wrap">
-          <motion.div 
+          <motion.div
             className="sec-head"
             initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.1 }} variants={fadeInUp}
           >
@@ -110,7 +110,7 @@ function About() {
             <p className="sec-desc">From internship to current role — hands-on across the stack.</p>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             className="exp-list"
             initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.1 }} variants={staggerContainer}
           >
