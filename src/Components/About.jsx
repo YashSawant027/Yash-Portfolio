@@ -1,117 +1,130 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Code2, Rocket, Heart } from 'lucide-react';
 
-// Keep your imports as they are
-import javaScript from './AboutAssets/js-official-svgrepo-com.svg';
-import html from './AboutAssets/html-5-svgrepo-com.svg';
-import cssimg from './AboutAssets/css-svgrepo-com.svg';
-import reactimg from './AboutAssets/react-svgrepo-com.svg';
-import pythonimg from './AboutAssets/python-svgrepo-com.svg';
-import gitimg from './AboutAssets/git-branch-svgrepo-com.svg';
-import mongoimg from './AboutAssets/mongo-svgrepo-com.svg';
-import django from './AboutAssets/django.svg';
-import mysql from './AboutAssets/mysql.svg';
-import postgresql from './AboutAssets/postgresql.svg';
-import Tailwindcss from './AboutAssets/Tailwindcss.svg';
-import Fastapi from './AboutAssets/Fastapi.svg';
+const fadeInUp = {
+  hidden: { opacity: 0, y: 80 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }
+};
+
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+      delayChildren: 0.2
+    }
+  }
+};
 
 function About() {
-  const skills = [
-    { img: reactimg, label: "React", color: "text-cyan-500" },
-    { img: pythonimg, label: "Python", color: "text-blue-500" },
-    { img: django, label: "Django", color: "text-emerald-700" },
-    { img: Fastapi, label: "FastAPI", color: "text-teal-500" },
-    { img: Tailwindcss, label: "Tailwind", color: "text-sky-400" },
-    { img: postgresql, label: "PostgreSQL", color: "text-indigo-500" },
-    { img: mysql, label: "MySQL", color: "text-blue-600" },
-    { img: mongoimg, label: "MongoDB", color: "text-green-500" },
-    { img: gitimg, label: "Git", color: "text-orange-600" },
-    { img: javaScript, label: "JS", color: "text-yellow-500" },
-  ];
-
   return (
-    <section className='bg-[#FDFDFD] w-full py-20 px-6'>
-      <div className='max-w-7xl mx-auto'>
-        
-        {/* Editorial Header */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className='max-w-3xl mb-20'
-        >
-          <div className='flex items-center gap-2 mb-4'>
-            <span className='w-8 h-[2px] bg-yellow-400'></span>
-            <span className='text-xs font-black uppercase tracking-[0.3em] text-slate-400'>Portfolio v2.0</span>
+    <>
+      {/* ABOUT */}
+      <section className="section" id="about">
+        <div className="wrap">
+          <motion.div 
+            className="sec-head"
+            initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeInUp}
+          >
+            <div>
+              <div className="sec-num">01 — Profile</div>
+              <h2 className="sec-title">About</h2>
+            </div>
+            <p className="sec-desc">Building scalable digital products with a focus on clean architecture and seamless user experiences.</p>
+          </motion.div>
+
+          <div className="about-layout">
+            <motion.div 
+              className="about-copy"
+              initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeInUp}
+            >
+              <p>I'm Yash, a <span className="u">BSc IT graduate</span> based in Mumbai, specialising in responsive interfaces and AI-powered web applications.</p>
+              <p>I'm experienced in integrating <strong>Large Language Models</strong> with modern frameworks like <strong>FastAPI</strong> and <strong>React</strong> — passionate about production-ready solutions built on RAG architectures, SQL/NoSQL databases, and clean, testable code.</p>
+              <p>An experienced full-stack developer with hands-on industry experience, always open to conversations about interesting problems and ambitious teams.</p>
+
+              <div className="metrics">
+                <div className="metric"><div className="n">10+</div><div className="l">Projects Shipped</div></div>
+                <div className="metric"><div className="n">A</div><div className="l">Performance Grade</div></div>
+                <div className="metric"><div className="n">1+</div><div className="l">Years Experience</div></div>
+              </div>
+            </motion.div>
+
+            <motion.div 
+              className="stack-list"
+              initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={staggerContainer}
+            >
+              <motion.div variants={fadeInUp} className="stack-group">
+                <div className="stack-group-head"><h4>Frontend</h4><span>04</span></div>
+                <div className="stack-items">
+                  <div className="stack-item">React.js</div><div className="stack-item">Tailwind CSS</div><div className="stack-item">Framer Motion</div><div className="stack-item">HTML5 &amp; CSS3</div>
+                </div>
+              </motion.div>
+              <motion.div variants={fadeInUp} className="stack-group">
+                <div className="stack-group-head"><h4>Backend &amp; AI</h4><span>05</span></div>
+                <div className="stack-items">
+                  <div className="stack-item">Python</div><div className="stack-item">Django</div><div className="stack-item">FastAPI</div><div className="stack-item">LangChain</div><div className="stack-item">Groq / Llama 3</div>
+                </div>
+              </motion.div>
+              <motion.div variants={fadeInUp} className="stack-group">
+                <div className="stack-group-head"><h4>Data, Tools &amp; DevOps</h4><span>05</span></div>
+                <div className="stack-items">
+                  <div className="stack-item">SQL</div><div className="stack-item">PostgreSQL</div><div className="stack-item">.NET</div><div className="stack-item">CI/CD</div><div className="stack-item">Git</div>
+                </div>
+              </motion.div>
+              <motion.div variants={fadeInUp} className="stack-group" style={{borderBottom: 'none'}}>
+                <div className="stack-group-head"><h4>Education</h4><span>—</span></div>
+                <div className="ledger-row" style={{padding: '0 0 12px'}}><span className="ledger-label">BSc IT</span><span className="ledger-value" style={{fontSize: '14px'}}>Bhavan's College · 2023–2026 · CGPA 7.5</span></div>
+                <div className="ledger-row" style={{padding: '0 0 12px', borderBottom: 'none'}}><span className="ledger-label">HSC — Commerce</span><span className="ledger-value" style={{fontSize: '14px'}}>Valia College · 2023 · 87%</span></div>
+              </motion.div>
+            </motion.div>
           </div>
-          <h1 className='text-6xl md:text-8xl font-[900] text-slate-900 tracking-tighter leading-none mb-8'>
-            About <span className='text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-orange-500 italic font-serif font-light'>Me</span>
-          </h1>
-          <p className='text-xl md:text-2xl text-slate-500 font-medium leading-relaxed'>
-            Building scalable digital products with a focus on clean architecture and seamless user experiences.
-          </p>
-        </motion.div>
-
-        <div className='grid grid-cols-1 lg:grid-cols-12 gap-16'>
-          
-          {/* Left Side: Bio */}
-          <motion.div 
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className='lg:col-span-7 space-y-8'
-          >
-            <h2 className='text-3xl font-black text-slate-900 flex items-center gap-3'>
-              <Code2 className='text-yellow-500' /> Get to know me!
-            </h2>
-            
-            <div className='space-y-6 text-lg text-slate-600 leading-relaxed font-medium'>
-              <p>
-                I’m Yash, a <span className='text-slate-900 font-bold underline decoration-yellow-400 decoration-4 underline-offset-4'>Full-Stack Web Developer</span> based in Mumbai. I specialize in building high-performance backend systems and responsive frontend applications.
-              </p>
-              <p>
-                Whether it's designing efficient APIs with <span className='text-slate-900 font-semibold'>FastAPI/Django</span> or crafting fluid interfaces with <span className='text-slate-900 font-semibold'>React</span>, I thrive on solving complex technical challenges.
-              </p>
-              <p>
-                I’m actively seeking opportunities to contribute to innovative teams. If you're looking for a developer who values <span className='italic font-serif'>scalability</span> and <span className='italic font-serif'>usability</span>, let's connect.
-              </p>
-            </div>
-
-            
-          </motion.div>
-
-          {/* Right Side: Skills Grid */}
-          <motion.div 
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className='lg:col-span-5'
-          >
-            <h2 className='text-3xl font-black text-slate-900 mb-8 flex items-center gap-3'>
-              <Rocket className='text-yellow-500' /> Technical Arsenal
-            </h2>
-            
-            <div className='flex flex-wrap gap-3'>
-              {skills.map((skill, index) => (
-                <motion.div
-                  key={index}
-                  whileHover={{ y: -5, scale: 1.05 }}
-                  className='flex items-center gap-3 bg-white border border-slate-100 px-5 py-4 rounded-[1.5rem] shadow-sm hover:shadow-xl transition-all cursor-default group hover:border-yellow-200'
-                >
-                  <img src={skill.img} alt={skill.label} className='w-6 h-6 object-contain grayscale group-hover:grayscale-0 transition-all' />
-                  <span className={`font-bold text-sm tracking-tight ${skill.color}`}>{skill.label}</span>
-                </motion.div>
-              ))}
-            </div>
-
-            {/* Interest Bento Card */}
-            
-          </motion.div>
-
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* EXPERIENCE */}
+      <section className="section tight" id="experience" style={{background: 'var(--paper-2)', paddingTop: '0'}}>
+        <div className="wrap">
+          <motion.div 
+            className="sec-head"
+            initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeInUp}
+          >
+            <div>
+              <div className="sec-num">02 — Experience</div>
+              <h2 className="sec-title">Where I've worked</h2>
+            </div>
+            <p className="sec-desc">From internship to current role — hands-on across the stack.</p>
+          </motion.div>
+
+          <motion.div 
+            className="exp-list"
+            initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={staggerContainer}
+          >
+            <motion.div variants={fadeInUp} className="exp-row is-current">
+              <span className="exp-dot"></span>
+              <div>
+                <span className="exp-period">2025 — Present</span>
+                <div className="exp-role">AI &amp; Full-Stack Developer</div>
+                <div className="exp-org">BDO — one of the Big 5 professional services firms</div>
+                <p className="exp-desc">Building and maintaining AI-integrated full-stack applications, working across React frontends and Python/FastAPI backends within a professional services environment.</p>
+              </div>
+              <div className="exp-tag live">Current role</div>
+            </motion.div>
+
+            <motion.div variants={fadeInUp} className="exp-row">
+              <span className="exp-dot"></span>
+              <div>
+                <span className="exp-period">2024 — 2025 · 6 months</span>
+                <div className="exp-role">Full-Stack Developer — Intern</div>
+                <div className="exp-org">Pestact Services</div>
+                <p className="exp-desc">Contributed across the stack on production features, gaining hands-on experience with real-world development workflows, code reviews, and shipping to users.</p>
+              </div>
+              <div className="exp-tag">Internship</div>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+    </>
   );
 }
 
