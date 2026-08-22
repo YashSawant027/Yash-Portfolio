@@ -147,7 +147,7 @@ function App() {
           <motion.h1 variants={fadeInUp} className="hero-head one-line">YASH <span className="line2">SAWANT</span></motion.h1>
           <motion.div variants={fadeInUp} className="hero-annotate">
             <div className="leader"></div>
-            <p><strong>AI &amp; Full-Stack Developer</strong> engineering intelligent systems. I specialize in integrating advanced <strong>LLMs</strong> and custom <strong>RAG pipelines</strong> into fast, highly scalable web applications.</p>
+            <p><strong>AI &amp; Full-Stack Developer</strong> engineering intelligent systems. I am specialize in integrating advanced <strong>LLMs</strong> and custom <strong>RAG pipelines</strong> into fast, highly scalable web applications.</p>
           </motion.div>
           <motion.div variants={fadeInUp} className="hero-actions">
             <a href="#work" className="btn-block solid">View selected work</a>
