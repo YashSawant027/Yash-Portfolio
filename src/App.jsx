@@ -151,7 +151,7 @@ function App() {
           </motion.div>
           <motion.div variants={fadeInUp} className="hero-actions">
             <a href="#work" className="btn-block solid">View selected work</a>
-            <a href="https://drive.google.com/file/d/1QJs2MciWbyQfTh97YI5di4xhSggDHFD9/view?usp=drive_link" className="btn-block outline" target="_blank" rel="noreferrer">Download résumé</a>
+            <a href="https://docs.google.com/document/d/1Tb80g1ih4ObzcBRzbBi8Be4V-fS4-N5b/edit?usp=drive_link&ouid=115852086542349642100&rtpof=true&sd=true" className="btn-block outline" target="_blank" rel="noreferrer">Download résumé</a>
           </motion.div>
         </motion.div>
 
