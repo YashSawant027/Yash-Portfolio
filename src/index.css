@@ -886,6 +886,10 @@ footer {
     padding: 0 20px;
   }
 
+  .hero {
+    padding-top: 120px;
+  }
+
   .hero-head {
     font-size: clamp(40px, 13vw, 80px);
   }
@@ -925,6 +929,11 @@ footer {
   .about-layout {
     grid-template-columns: 1fr;
     gap: 50px;
+  }
+
+  .about-copy p {
+    font-size: 15px;
+    line-height: 1.6;
   }
 
   .work-row {
