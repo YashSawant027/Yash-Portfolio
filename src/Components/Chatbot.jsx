@@ -27,7 +27,7 @@ function Chatbot() {
   const targetText = isHovered ? "Click me!" : "Hey there!";
 
   useEffect(() => {
-    if (!hasOpened && !isOpen) {
+    if (!isOpen) {
       let timeout;
       let interval;
       
@@ -57,7 +57,7 @@ function Chatbot() {
         clearInterval(interval);
       };
     }
-  }, [targetText, isOpen, hasOpened]);
+  }, [targetText, isOpen]);
 
   const handleSend = (e) => {
     e.preventDefault();
